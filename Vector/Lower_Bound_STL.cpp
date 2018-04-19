@@ -38,8 +38,7 @@ Sample Output
  
  */
  
- 
- #include <cmath>
+#include <cmath>
 #include <cstdio>
 #include <vector>
 #include <iostream>
@@ -49,14 +48,12 @@ using namespace std;
 void find_value(vector<int> arr, int v){
     
     vector<int>::iterator it;
-    
-    it = find(arr.begin(), arr.end(), v);
-    
-    if(it!= arr.end()){
+        
+    it = lower_bound(arr.begin(), arr.end(),v);
+    if(arr[it-arr.begin()] == v){
         cout << "Yes " << (it-arr.begin()+1);
-    }
-    else{
-        it = lower_bound(arr.begin(), arr.end(),v);
+    }    
+    else{    
         cout << "No " << (it - arr.begin()+1);
     }
     cout << endl;
