@@ -11,18 +11,18 @@ Explanation: [4,-1,2,1] has the largest sum = 6.
 int maxSubArray(vector<int>& nums) {
 		
         int max_sum = nums[0];
-        int arr[nums.size()];
-        arr[0] = nums[0];
+        
+        int sum = nums[0];
         
         for(int i = 1; i<nums.size(); i++){
-            if(arr[i-1] < 0){
-                arr[i] = nums[i];
+            if(sum < 0){
+                sum = nums[i];
             }
             else{
-                arr[i] = arr[i-1] + nums[i];
+                sum += nums[i];
             }
-            if(max_sum < arr[i])
-                max_sum = arr[i];
+            if(max_sum < sum)
+                max_sum = sum;
         }
         
         return max_sum;
