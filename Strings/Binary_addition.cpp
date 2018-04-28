@@ -37,3 +37,5 @@ string addBinary(string a, string b) {
         std::reverse(result.begin(),result.end());
         return result;
     }
+
+
