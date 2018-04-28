@@ -33,3 +33,37 @@ int lengthOfLongestSubstring(string s) {
         return res;
         
     }
+
+
+/*
+Using Hash-map
+Though following answer could not pass all cases - 
+usefull to learn use of hashmap
+
+int lengthOfLongestSubstring(string s) {
+     
+        int start = 0, end = 0, res = 0;
+        map<char, int>n_map;        
+        map<char, int>:: iterator it;
+        
+        for(int i = 0; i<s.length(); i++){
+            it = n_map.find(s[i]);
+            if(it == n_map.end()){
+                n_map.insert(pair<char, int>(s[i],i));
+                end = i;
+            }    
+            else{
+                start = n_map[s[i]] + 1;
+                n_map[s[i]] = i;
+                end = i;
+            }
+        
+            if(res < (end-start)){
+                cout << s[start] << " " << start << " "<< s[end] << " " << end << endl;
+                res = end-start;
+        }
+        }
+        return res+1;
+        
+    }
+  */
